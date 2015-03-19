@@ -15,7 +15,7 @@ with open(filename) as infile:
                 if "," in x:
                     coords = x.split(",")
                     coords[src] = str(float(coords[src]) + ((amp * math.sin(float(coords[dst]) * freq)) \
-                                                     + (amp * math.cos(float(coords[dst]) * freq))))
+                                                     * (amp * math.cos(float(coords[dst]) * freq)))) # it's more fun to multiply
                     result = result + coords[0] + "," + coords[1] + " "
                 else:
                     result = result + x + " "
